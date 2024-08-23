@@ -1,0 +1,237 @@
+/* VideoPage.css
+
+.page-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.instructional-text {
+  width: 40%;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-right: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-container {
+  width: 55%;
+  text-align: center;
+}
+
+.video-container h2 {
+  margin-top: 50px;
+  padding-top: 40px;
+}
+
+.video-container video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.nav-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.circular-progress {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+}
+
+.circular-progress {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-top: 20px;
+}
+
+.progress-completion {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 5px;
+  color: #4CAF50;
+}
+ */
+ 
+/* Container that holds both text and video side by side */
+.displayline {
+  display: flex;
+  justify-content: space-between; /* Adjusts space between the two elements */
+  align-items: center; /* Aligns the items vertically centered */
+}
+
+
+
+.bottom-background {
+  position: relative;
+  width: 100%;
+  height: 100px; /* Adjust the height as needed */
+  background: linear-gradient(to right, #003366, rgb(63, 206, 134));
+  border-radius: 0 0 0 90%; /* Creates a wavy top curve */
+  transform: rotate(180deg); /* Rotates the bar by 180 degrees */
+  z-index: -4; /* Place behind other content */
+}
+
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch; /* Make text and video containers equal height */
+  padding: 20px;
+  height: calc(100vh - 100px); /* Adjust for bottom background height */
+  box-sizing: border-box;
+}
+
+.instructional-text {
+  flex: 1;
+  padding: 2px;
+  margin-right: 20px;
+  background-color: #ebef7800;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  font-size: 25px; /* Increased text size */
+}
+
+.instructional-text p {
+  line-height: 1.5;
+}
+
+.video-container {
+  flex: 1; /* Make the video container equal width as text container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center video vertically */
+  align-items: center;
+  position: relative; /* Ensure the progress bar is positioned relative to this container */
+}
+
+.video-container video {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-width: 600px; /* Medium size video */
+  border-radius: 8px;
+}
+
+.circular-progress {
+  position: absolute; /* Position relative to video container */
+  top: 5px; /* Top of the video */
+  right: 25px; /* Right side of the video */
+  width: 80px; /* Fixed width */
+  height: 80px; /* Fixed height */
+  z-index: 1; /* Ensure it’s on top of the video */
+  text-align: center; /* Center the progress text */
+}
+
+.nav-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.progress-completion {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.2em; /* Slightly larger for readability */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto; /* Adjust for small screens */
+  }
+
+  .instructional-text, .video-container {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .circular-progress {
+    top: 10px; /* Keep near the top of the video on small screens */
+    right: 10px;
+    width: 60px; /* Adjust size for smaller screens */
+    height: 60px; /* Adjust size for smaller screens */
+  }
+
+  .nav-buttons {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .instructional-text {
+    font-size: 24px; /* Adjust font size for very small screens */
+  }
+
+  .circular-progress {
+    top: 5px; /* Adjust positioning for very small screens */
+    right: 5px;
+    width: 50px; /* Further adjust size */
+    height: 50px; /* Further adjust size */
+  }
+
+  .progress-completion {
+    font-size: 1em; /* Adjust font size for very small screens */
+  }
+}
+
+/* Button styles */
+.nav-buttons button {
+  background-color: #007bff; /* Blue background color */
+  color: white; /* White text color */
+  border: none;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-buttons button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.nav-buttons button:disabled {
+  background-color: #6c757d; /* Grey background for disabled state */
+  cursor: not-allowed; /* Change cursor to indicate disabled state */
+}
+
+.next-module-container {
+  display: inline-flex;
+  align-items: center; /* Align text and icon vertically */
+}
+
+.icon-arrow {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+}
+
+
+.icon-arrow:hover {
+  transform: scale(1.3);  /* Slightly enlarge the icon on hover */
+}
+
+
+
+
+
